@@ -14,7 +14,7 @@ function fibsRec(num) {
     return [0];
   }
   if (num === 2) {
-    return fibsRec(1).concat([1]);
+    return [0, 1];
   }
 
   const prevFib = fibsRec(num - 1);
