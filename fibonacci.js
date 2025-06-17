@@ -8,4 +8,17 @@ function fibs(numCount) {
   return fibonacci;
 }
 
-console.log(fibs(8));
+function fibsRec(num) {
+  // This took so much longer than it should have
+  if (num === 1) {
+    return [0];
+  }
+  if (num === 2) {
+    return fibsRec(1).concat([1]);
+  }
+
+  const prevFib = fibsRec(num - 1);
+  return prevFib.concat([prevFib.at(-1) + prevFib.at(-2)]);
+}
+
+console.log(fibsRec(8));
